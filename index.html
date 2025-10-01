@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mezeluri la Grasu — Mezeluri tradiționale & preparate | Ilia</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Mezeluri la Grasu — mezeluri tradiționale, cârnați, salamuri și preparate. Fabricate artizanal, atent la gust și calitate. Strada Libertății 55, Ilia." />
+  <meta name="keywords" content="mezeluri, salam, cârnați, produse tradiționale, Mezeluri la Grasu, Ilia, mezeluri românești" />
+  <meta name="author" content="Mezeluri la Grasu">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mezelurilagrasu.example/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mezeluri la Grasu — Mezeluri tradiționale & preparate" />
+  <meta property="og:description" content="Produse artizanale: salamuri, cârnați, afumături. Calitate și tradiție. Vizitează-ne la Strada Libertății 55, Ilia." />
+  <meta property="og:image" content="https://i.ibb.co/fzv56MTn/logo-Grasu.jpg" />
+  <meta property="og:url" content="https://mezelurilagrasu.example/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://i.ibb.co/fzv56MTn/logo-Grasu.jpg" type="image/jpeg" />
+
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Swiper (carousel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+  <!-- Structured data (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Mezeluri la Grasu",
+    "image": "https://i.ibb.co/fzv56MTn/logo-Grasu.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Strada Libertății 55",
+      "addressLocality": "Ilia",
+      "postalCode": "337270",
+      "addressCountry": "RO"
+    },
+    "telephone": "+40 7XX XXX XXX",
+    "description": "Mezeluri artizanale: cârnați, salamuri, afumături. Preparare tradițională și ingrediente selectate.",
+    "url": "https://mezelurilagrasu.example/",
+    "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00"
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#fcfbf9;
+      --primary:#9B2B1B;
+      --primary-2:#C45031;
+      --accent:#2F5F3A;
+      --muted:#6b6b6b;
+      --card:#fff7f5;
+      --glass: rgba(255,255,255,0.75);
+      --shadow: 0 20px 60px rgba(0,0,0,0.08);
+      --shadow-lg: 0 30px 80px rgba(0,0,0,0.12);
+      --radius:16px;
+      --max-width:1280px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{background:linear-gradient(180deg,#fff,#fff8f6);color:#222;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none;transition:all 0.3s ease}
+    img{display:block;max-width:100%;height:auto}
+
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem .75rem;background:#fff;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.12);z-index:9999}
+
+    /* Enhanced Navbar */
+    .navbar{
+      position:fixed; top:0; left:0; right:0; z-index:1100; 
+      backdrop-filter: blur(12px) saturate(180%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88));
+      border-bottom: 1px solid rgba(155,43,27,0.08);
+      transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+    .navbar.scrolled{
+      box-shadow:0 8px 32px rgba(0,0,0,.1);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+    }
+    .navbar-brand { display:flex; align-items:center; gap:.75rem; font-weight:800; font-size:1.15rem; color:var(--primary) }
+    .navbar-brand img { height:52px; width:auto; object-fit:contain; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:transform 0.3s ease }
+    .navbar-brand:hover img{transform:scale(1.05)}
+    .nav-link{
+      padding:.5rem .85rem; 
+      border-radius:10px; 
+      color:var(--muted); 
+      font-weight:600;
+      transition: all .25s ease;
+      position:relative;
+    }
+    .nav-link::after{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:50%;
+      transform:translateX(-50%) scaleX(0);
+      width:80%;
+      height:2px;
+      background:var(--primary-2);
+      border-radius:2px;
+      transition:transform 0.3s ease;
+    }
+    .nav-link:hover{background:rgba(196,80,49,0.08); color:var(--primary)}
+    .nav-link:hover::after{transform:translateX(-50%) scaleX(1)}
+    
+    .btn-cta{
+      background:linear-gradient(135deg,var(--primary-2),var(--primary)); 
+      color:#fff; 
+      border-radius:50px; 
+      padding:.6rem 1.4rem; 
+      font-weight:700; 
+      font-size:.95rem;
+      box-shadow:0 12px 32px rgba(196,80,49,0.25); 
+      border:none; 
+      cursor:pointer; 
+      transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+      position:relative;
+      overflow:hidden;
+    }
+    .btn-cta::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition:left 0.5s ease;
+    }
+    .btn-cta:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 40px rgba(196,80,49,0.35)}
+    .btn-cta:hover::before{left:100%}
+    .btn-cta:active{transform:translateY(-1px)}
+    
+    .btn-ghost{
+      border:2px solid rgba(155,43,27,0.15); 
+      background:transparent; 
+      padding:.5rem 1.1rem; 
+      border-radius:10px; 
+      cursor:pointer; 
+      font-weight:600;
+      transition: all .3s ease;
+      color:var(--primary);
+    }
+    .btn-ghost:hover{
+      background:var(--primary);
+      color:#fff;
+      border-color:var(--primary);
+      transform:translateY(-2px);
+      box-shadow:0 8px 20px rgba(155,43,27,0.2);
+    }
+
+    /* Enhanced Hero Section */
+    .hero{
+      padding:140px 1.5rem 5rem; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      min-height:90vh;
+      background: 
+        linear-gradient(135deg, rgba(155,43,27,0.03) 0%, rgba(196,80,49,0.02) 100%),
+        url('https://i.ibb.co/qMtLLPD5/bg1grasu.jpg') center/cover no-repeat;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(252,251,249,0.2) 100%);
+      z-index:1;
+    }
+    .hero-inner{
+      max-width:var(--max-width); 
+      width:100%; 
+      display:grid; 
+      grid-template-columns: 1.1fr 480px; 
+      gap:3rem; 
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    @media (max-width:1100px){ .hero-inner{grid-template-columns:1fr; padding:0 1rem; text-align:center} }
+    
+    .hero-card{
+      background:linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,247,245,0.9)); 
+      border-radius:24px; 
+      padding:2.5rem; 
+      box-shadow:0 25px 70px rgba(0,0,0,0.12); 
+      display:flex; 
+      gap:1.75rem; 
+      align-items:center;
+      border:1px solid rgba(255,255,255,0.8);
+      backdrop-filter:blur(10px);
+      transition:transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .hero-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 30px 85px rgba(0,0,0,0.15);
+    }
+    
+    .logo-box{
+      width:130px; 
+      height:130px; 
+      border-radius:20px; 
+      background:linear-gradient(145deg,#fff,rgba(255,247,245,0.8)); 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      padding:10px; 
+      border:2px solid rgba(155,43,27,0.1); 
+      flex-shrink:0;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+    .logo-box img{max-width:100%; max-height:100%; object-fit:contain; border-radius:12px}
+    
+    .hero-title{
+      font-size:2.75rem; 
+      color:var(--primary); 
+      margin:0 0 .5rem; 
+      font-weight:900; 
+      line-height:1.1;
+      font-family: 'Playfair Display', serif;
+      letter-spacing:-0.02em;
+    }
+    .hero-sub{
+      color:var(--muted); 
+      margin:0 0 1.25rem; 
+      line-height:1.6;
+      font-size:1.05rem;
+    }
+
+    .features{display:flex; gap:1rem; flex-wrap:wrap}
+    .feature{
+      background:linear-gradient(135deg,#fff,rgba(255,247,245,0.9)); 
+      padding:.75rem 1.1rem; 
+      border-radius:12px; 
+      border:1px solid rgba(155,43,27,0.08); 
+      display:flex; 
+      gap:.7rem; 
+      align-items:center;
+      font-size:.95rem;
+      font-weight:600;
+      color:var(--primary);
+      box-shadow:0 6px 20px rgba(0,0,0,0.04);
+      transition:all 0.3s ease;
+    }
+    .feature:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+    .feature::before{
+      content:'✓';
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:24px;
+      height:24px;
+      background:linear-gradient(135deg,var(--primary-2),var(--primary));
+      color:#fff;
+      border-radius:50%;
+      font-size:.75rem;
+      font-weight:bold;
+    }
+
+    /* Section Styling */
+    .section { padding:5rem 0; position:relative }
+    .section-title{ 
+      text-align:center; 
+      font-size:2.5rem; 
+      color:var(--primary); 
+      margin-bottom:1rem; 
+      font-weight:900; 
+      line-height:1.2;
+      font-family: 'Playfair Display', serif;
+      letter-spacing:-0.01em;
+    }
+    .section-subtitle{
+      text-align:center;
+      color:var(--muted);
+      font-size:1.1rem;
+      max-width:700px;
+      margin:0 auto 3.5rem;
+      line-height:1.7;
+    }
+
+    /* Enhanced Product Cards */
+    .product-card{ 
+      background:#fff; 
+      border-radius:20px; 
+      overflow:hidden; 
+      box-shadow:0 12px 40px rgba(0,0,0,0.08); 
+      border:1px solid rgba(0,0,0,0.03); 
+      height:100%;
+      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position:relative;
+    }
+    .product-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:linear-gradient(180deg, transparent 0%, rgba(155,43,27,0.02) 100%);
+      opacity:0;
+      transition:opacity 0.4s ease;
+      z-index:1;
+      pointer-events:none;
+    }
+    .product-card:hover{
+      transform:translateY(-12px) scale(1.02);
+      box-shadow:0 24px 60px rgba(0,0,0,0.14);
+    }
+    .product-card:hover::before{opacity:1}
+    
+    .product-media{ 
+      height:280px; 
+      overflow:hidden;
+      position:relative;
+    }
+    .product-media::after{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      height:60%;
+      background:linear-gradient(0deg, rgba(0,0,0,0.4) 0%, transparent 100%);
+      opacity:0;
+      transition:opacity 0.4s ease;
+    }
+    .product-card:hover .product-media::after{opacity:1}
+    .product-media img{ 
+      width:100%; 
+      height:100%; 
+      object-fit:cover; 
+      transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .product-card:hover .product-media img{transform:scale(1.1)}
+    
+    .product-body{ padding:1.75rem; position:relative; z-index:2 }
+    .product-title{ 
+      font-weight:800; 
+      color:var(--primary); 
+      margin-bottom:.6rem; 
+      line-height:1.3;
+      font-size:1.35rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .product-desc{ 
+      color:var(--muted); 
+      font-size:1rem; 
+      line-height:1.6; 
+      margin:0;
+    }
+
+    /* Gallery Section */
+    .gallery-section{
+      padding:5rem 0;
+      background:linear-gradient(180deg, #fff 0%, rgba(252,251,249,0.5) 100%);
+    }
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:1.5rem;
+      margin-top:3rem;
+    }
+    .gallery-item{
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 12px 40px rgba(0,0,0,0.08);
+      position:relative;
+      aspect-ratio:4/3;
+      cursor:pointer;
+      transition:all 0.4s ease;
+    }
+    .gallery-item:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 60px rgba(0,0,0,0.14);
+    }
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform 0.5s ease;
+    }
+    .gallery-item:hover img{transform:scale(1.15)}
+
+    /* Enhanced Testimonials */
+    .testimonial{ 
+      background:linear-gradient(145deg,#fff,rgba(255,247,245,0.9)); 
+      padding:2rem; 
+      border-radius:20px; 
+      box-shadow:0 12px 40px rgba(0,0,0,0.06); 
+      height:100%;
+      border:1px solid rgba(155,43,27,0.05);
+      transition:all 0.4s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .testimonial::before{
+      content:'"';
+      position:absolute;
+      top:10px;
+      left:15px;
+      font-size:6rem;
+      color:rgba(155,43,27,0.06);
+      font-family: 'Playfair Display', serif;
+      line-height:1;
+    }
+    .testimonial:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 60px rgba(0,0,0,0.12);
+    }
+    .testimonial p{ line-height:1.7; position:relative; z-index:1; font-size:1.05rem }
+    .testimonial strong{color:var(--primary); font-weight:700}
+
+    /* Enhanced Contact Section */
+    .contact-panel{ 
+      background:linear-gradient(145deg,#fff,rgba(255,247,245,0.9)); 
+      border-radius:24px; 
+      box-shadow:var(--shadow-lg); 
+      padding:2.5rem;
+      border:1px solid rgba(155,43,27,0.05);
+    }
+    .map-wrap{ 
+      border-radius:24px; 
+      overflow:hidden; 
+      border:1px solid rgba(0,0,0,0.04); 
+      height:100%; 
+      min-height:500px;
+      box-shadow:0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .form-control{
+      border-radius:12px; 
+      border:2px solid rgba(155,43,27,0.1); 
+      padding:.75rem 1rem;
+      font-size:1rem;
+      transition:all 0.3s ease;
+      background:#fff;
+    }
+    .form-control:focus{
+      border-color:var(--primary); 
+      box-shadow:0 0 0 4px rgba(196,80,49,0.12); 
+      outline:none;
+      transform:translateY(-2px);
+    }
+    .form-label{
+      font-weight:700; 
+      margin-bottom:.5rem; 
+      color:#333;
+      font-size:.95rem;
+    }
+
+    /* Footer */
+    footer{ 
+      padding:3rem 0; 
+      background:linear-gradient(135deg,var(--primary), #7a1f15); 
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    footer::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      left:-10%;
+      width:120%;
+      height:100%;
+      background:radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    }
+
+    /* Animations */
+    .reveal{ 
+      opacity:0; 
+      transform:translateY(40px); 
+      transition:opacity .8s cubic-bezier(0.4, 0, 0.2, 1), transform .8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.visible{ opacity:1; transform:none }
+    
+    .fade-in{ 
+      animation:fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+    @keyframes fadeIn{ 
+      from{opacity:0; transform:translateY(30px)} 
+      to{opacity:1; transform:none} 
+    }
+
+    /* Responsive */
+    @media (max-width:768px){
+      .hero-title{ font-size:2rem }
+      .hero-inner{ gap:1.5rem }
+      .hero-card{flex-direction:column; align-items:center; text-align:center; padding:2rem}
+      .logo-box{width:100px; height:100px}
+      .section-title{font-size:2rem}
+      .features{justify-content:center}
+      .product-media{height:220px}
+    }
+
+    @media (max-width:1100px){
+      .hero-inner > aside{max-width:100%}
+      .hero-card{justify-content:center}
+    }
+
+    /* Swiper customization */
+    .swiper-button-next, .swiper-button-prev{
+      background:rgba(255,255,255,0.95);
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      box-shadow:0 8px 24px rgba(0,0,0,0.12);
+      transition:all 0.3s ease;
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover{
+      transform:scale(1.1);
+      box-shadow:0 12px 32px rgba(0,0,0,0.18);
+    }
+    .swiper-button-next::after, .swiper-button-prev::after{
+      font-size:20px;
+      font-weight:bold;
+    }
+    .swiper-pagination-bullet{
+      width:12px;
+      height:12px;
+      background:var(--primary);
+      opacity:0.3;
+      transition:all 0.3s ease;
+    }
+    .swiper-pagination-bullet-active{
+      opacity:1;
+      transform:scale(1.3);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Sari la conținut</a>
+
+  <nav id="siteNav" class="navbar navbar-expand-lg">
+    <div class="container" style="max-width:var(--max-width);">
+      <a class="navbar-brand" href="#home" aria-label="Mezeluri la Grasu — Acasă">
+        <img src="https://i.ibb.co/fzv56MTn/logo-Grasu.jpg" alt="Mezeluri la Grasu logo" loading="eager" />
+        <span class="d-none d-md-inline">Mezeluri la Grasu</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Meniu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="#home">Acasă</a></li>
+          <li class="nav-item"><a class="nav-link" href="#produse">Produse</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galerie">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimoniale">Testimoniale</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn-cta" href="#contact">Solicită ofertă</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header id="home" class="hero">
+      <div class="hero-inner container">
+        <div class="hero-card reveal">
+          <div class="logo-box">
+            <img src="https://i.ibb.co/fzv56MTn/logo-Grasu.jpg" alt="logo Mezeluri la Grasu" loading="eager" />
+          </div>
+          <div>
+            <h1 class="hero-title">Mezeluri la Grasu</h1>
+            <p class="hero-sub">Mezeluri tradiționale, gust autentic și preparate cu atenție. Descoperă sortimentele noastre artizanale fabricate după rețete tradiționale.</p>
+            <div class="features">
+              <div class="feature">Produse artizanale</div>
+              <div class="feature">Ingrediente locale</div>
+              <div class="feature">Livrare rapidă</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="fade-in">
+          <div class="hero-card" style="flex-direction:column; align-items:flex-start; gap:1.25rem;">
+            <h2 style="margin:0;color:var(--primary);font-size:1.75rem;font-family: 'Playfair Display', serif;font-weight:800">Produse proaspete în fiecare zi</h2>
+            <p style="margin:0;color:var(--muted);line-height:1.7">Alege din sortimentele noastre: cârnați, salam, pastramă și preparate afumate. Calitate garantată și gust autentic.</p>
+            <div style="display:flex;gap:.75rem;margin-top:.5rem;flex-wrap:wrap">
+              <a class="btn-ghost" href="#produse">Vezi produsele</a>
+              <a class="btn-cta" href="#contact">Comandă acum</a>
+            </div>
+            <div style="margin-top:.5rem;padding-top:1rem;border-top:1px solid rgba(155,43,27,0.1);width:100%">
+              <div style="color:var(--muted);font-size:.9rem;margin-bottom:.3rem">Contact rapid</div>
+              <div style="font-weight:800;color:var(--primary);font-size:1.25rem">
+                <a href="tel:+40700000000" style="color:inherit;display:inline-flex;align-items:center;gap:.5rem">
+                  📞 +40 700 000 000
+                </a>
+              </div>
+              <div style="color:var(--muted);margin-top:.5rem;font-size:.9rem">📍 Strada Libertății 55, Ilia</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="produse" class="section">
+      <div class="container" style="max-width:var(--max-width);">
+        <h2 class="section-title">Sortimentele Noastre</h2>
+        <p class="section-subtitle">Produse preparate artizanal din ingrediente selectate cu atenție. Fiecare produs este rezultatul dedicării și pasiunii pentru gusturile autentice.</p>
+
+        <div class="swiper mySwiper" aria-label="Produse Mezeluri la Grasu" style="padding:1.5rem 0 3rem">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <article class="product-card">
+                <div class="product-media">
+                  <img src="https://i.ibb.co/qMtLLPD5/bg1grasu.jpg" alt="Salam tradițional Mezeluri la Grasu" loading="lazy">
+                </div>
+                <div class="product-body">
+                  <h3 class="product-title">Salam Tradițional</h3>
+                  <p class="product-desc">Salam uscat, afumat ușor, aromat cu condimente tradiționale românești. Perfect pentru platouri festive și sandvișuri gourmet.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="product-card">
+                <div class="product-media">
+                  <img src="https://i.ibb.co/PGmxYdyJ/bg2.jpg" alt="Cârnați la grătar" loading="lazy">
+                </div>
+                <div class="product-body">
+                  <h3 class="product-title">Cârnați de Casă</h3>
+                  <p class="product-desc">Rețetă tradițională, carne selecționată și condimentare echilibrată. Ideal la grătar, prăjit sau la tigaie.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="product-card">
+                <div class="product-media">
+                  <img src="https://i.ibb.co/xtX9ydBV/bg3.jpg" alt="Pastramă afumată" loading="lazy">
+                </div>
+                <div class="product-body">
+                  <h3 class="product-title">Pastramă Afumată</h3>
+                  <p class="product-desc">Pastramă fragedă, ușor afumată cu lemn de fag, perfectă pentru gustări fine sau preparate festive.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="product-card">
+                <div class="product-media">
+                  <img src="https://i.ibb.co/fd8FNd4m/bg4.jpg" alt="Slănină afumată" loading="lazy">
+                </div>
+                <div class="product-body">
+                  <h3 class="product-title">Slănină Afumată</h3>
+                  <p class="product-desc">Slănină maturată și afumată natural, tăiată subțire — gust rustic autentic și textură perfectă.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="product-card">
+                <div class="product-media">
+                  <img src="https://images.unsplash.com/photo-1564936286455-8f1c4f0b1c2e?q=80&w=1400&auto=format&crop=entropy&cs=tinysrgb" alt="Șuncă tradițională" loading="lazy">
+                </div>
+                <div class="product-body">
+                  <h3 class="product-title">Șuncă Afumată</h3>
+                  <p class="product-desc">Șuncă pregătită tradițional, afumată cu metode artizanale, ideală pentru micul dejun sau rețete gourmet.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="swiper-slide">
+              <article class="product-card">
+                <div class="product-media">
+                  <img src="https://images.unsplash.com/photo-1542834369-f10ebf06d3cb?q=80&w=1400&auto=format&crop=entropy&cs=tinysrgb" alt="Platou mezeluri" loading="lazy">
+                </div>
+                <div class="product-body">
+                  <h3 class="product-title">Platou Mixt Premium</h3>
+                  <p class="product-desc">Selecție mixtă din cele mai apreciate produse — perfect pentru evenimente speciale și mese festive.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="swiper-button-next" style="color:var(--primary)" aria-label="Următorul produs"></div>
+          <div class="swiper-button-prev" style="color:var(--primary)" aria-label="Produsul anterior"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie" class="gallery-section">
+      <div class="container" style="max-width:var(--max-width);">
+        <h2 class="section-title">Galeria Noastră</h2>
+        <p class="section-subtitle">Aruncă o privire asupra produselor și preparatelor noastre artizanale. Fiecare imagine spune povestea calității și dedicării noastre.</p>
+        
+        <div class="gallery-grid">
+          <div class="gallery-item reveal">
+            <img src="https://i.ibb.co/qMtLLPD5/bg1grasu.jpg" alt="Galerie Mezeluri la Grasu 1" loading="lazy">
+          </div>
+          <div class="gallery-item reveal">
+            <img src="https://i.ibb.co/PGmxYdyJ/bg2.jpg" alt="Galerie Mezeluri la Grasu 2" loading="lazy">
+          </div>
+          <div class="gallery-item reveal">
+            <img src="https://i.ibb.co/xtX9ydBV/bg3.jpg" alt="Galerie Mezeluri la Grasu 3" loading="lazy">
+          </div>
+          <div class="gallery-item reveal">
+            <img src="https://i.ibb.co/fd8FNd4m/bg4.jpg" alt="Galerie Mezeluri la Grasu 4" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimoniale" class="section" style="background:linear-gradient(180deg, rgba(252,251,249,0.5) 0%, #fff 100%)">
+      <div class="container" style="max-width:var(--max-width);">
+        <h2 class="section-title">Ce Spun Clienții Noștri</h2>
+        <p class="section-subtitle">Feedback-ul clienților noștri ne motivează să oferim în continuare produse de calitate superioară și servicii impecabile.</p>
+        
+        <div class="row g-4">
+          <div class="col-md-4 reveal">
+            <div class="testimonial">
+              <p style="margin-bottom:1.5rem">"Mezelurile lui Grasu sunt cu adevărat delicioase — gust de casă, pregătite cu pasiune. Recomand cu încredere tuturor prietenilor!"</p>
+              <p style="margin:0"><strong>— Maria P.</strong></p>
+              <p style="margin:0;color:var(--muted);font-size:.9rem">Client fidel</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="testimonial">
+              <p style="margin-bottom:1.5rem">"Calitate excepțională și arome autentice. Comandăm mereu pentru evenimente și nunca nu dezamăgesc. Cei mai buni cârnați din zonă!"</p>
+              <p style="margin:0"><strong>— Ion D.</strong></p>
+              <p style="margin:0;color:var(--muted);font-size:.9rem">Client corporativ</p>
+            </div>
+          </div>
+          <div class="col-md-4 reveal">
+            <div class="testimonial">
+              <p style="margin-bottom:1.5rem">"Serviciu rapid, produse foarte bune și proaspete. Ne-au salvat petrecerea cu platoul lor mixt. Mulțumim pentru profesionalism!"</p>
+              <p style="margin:0"><strong>— Elena M.</strong></p>
+              <p style="margin:0;color:var(--muted);font-size:.9rem">Client local</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container" style="max-width:var(--max-width);">
+        <h2 class="section-title">Contactează-ne</h2>
+        <p class="section-subtitle">Suntem aici pentru tine! Trimite-ne un mesaj sau vizitează-ne la sediu pentru a descoperi toate produsele noastre.</p>
+        
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="contact-panel reveal">
+              <h3 style="margin-top:0;color:var(--primary);font-size:1.75rem;font-family: 'Playfair Display', serif;font-weight:800">Informații de Contact</h3>
+              <p style="color:var(--muted);line-height:1.8;margin-bottom:2rem">
+                <strong style="color:var(--primary);display:block;margin-bottom:.5rem">📍 Adresa:</strong>
+                Strada Libertății 55, Ilia 337270, România<br/>
+                
+                <strong style="color:var(--primary);display:block;margin-top:1rem;margin-bottom:.5rem">📞 Telefon:</strong>
+                <a href="tel:+40700000000" style="color:var(--primary);font-weight:700;font-size:1.1rem">+40 700 000 000</a><br/>
+                
+                <strong style="color:var(--primary);display:block;margin-top:1rem;margin-bottom:.5rem">🕐 Program:</strong>
+                Luni - Vineri: 08:00 - 18:00<br/>
+                Sâmbătă: 09:00 - 14:00<br/>
+                Duminică: Închis
+              </p>
+
+              <h4 style="color:var(--primary);margin-bottom:1rem;font-weight:700">Trimite-ne un mesaj</h4>
+              <form id="contactForm" onsubmit="event.preventDefault(); showFormStatus();" aria-label="Formular contact">
+                <div class="mb-3">
+                  <label for="cf-name" class="form-label">Nume complet *</label>
+                  <input class="form-control" type="text" id="cf-name" placeholder="Introduceți numele dvs." required>
+                </div>
+                <div class="mb-3">
+                  <label for="cf-contact" class="form-label">Telefon / Email *</label>
+                  <input class="form-control" type="text" id="cf-contact" placeholder="Telefon sau adresă de email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="cf-message" class="form-label">Mesajul dvs. *</label>
+                  <textarea class="form-control" id="cf-message" rows="5" placeholder="Descrieți comanda sau întrebarea dvs." required></textarea>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                  <button class="btn-cta" type="submit">Trimite mesajul</button>
+                  <button class="btn-ghost" type="button" onclick="document.getElementById('contactForm').reset(); document.getElementById('formStatus').textContent=''">Resetează</button>
+                </div>
+                <div id="formStatus" style="margin-top:1rem;font-size:1rem;font-weight:600" role="status" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="map-wrap reveal">
+              <iframe
+                title="Locația Mezeluri la Grasu pe hartă"
+                src="https://www.google.com/maps?q=Strada+Libertății+55,+Ilia+337270,+Romania&output=embed"
+                style="border:0;width:100%;height:100%;" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="max-width:var(--max-width);position:relative;z-index:1">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2.5rem;margin-bottom:2rem">
+        <div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem">
+            <img src="https://i.ibb.co/fzv56MTn/logo-Grasu.jpg" alt="logo Mezeluri la Grasu" style="height:45px;width:auto;border-radius:8px" loading="lazy" />
+            <div style="font-weight:800;font-size:1.2rem">Mezeluri la Grasu</div>
+          </div>
+          <p style="opacity:.9;line-height:1.7;margin:0">Mezeluri artizanale preparate după rețete tradiționale. Calitate, gust și tradiție în fiecare produs.</p>
+        </div>
+        
+        <div>
+          <h4 style="font-weight:800;margin-bottom:1rem;font-size:1.1rem">Navigare Rapidă</h4>
+          <ul style="list-style:none;padding:0;margin:0">
+            <li style="margin-bottom:.6rem"><a href="#home" style="opacity:.9;transition:opacity .3s ease" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.9'">Acasă</a></li>
+            <li style="margin-bottom:.6rem"><a href="#produse" style="opacity:.9;transition:opacity .3s ease" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.9'">Produse</a></li>
+            <li style="margin-bottom:.6rem"><a href="#galerie" style="opacity:.9;transition:opacity .3s ease" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.9'">Galerie</a></li>
+            <li style="margin-bottom:.6rem"><a href="#testimoniale" style="opacity:.9;transition:opacity .3s ease" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.9'">Testimoniale</a></li>
+            <li><a href="#contact" style="opacity:.9;transition:opacity .3s ease" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.9'">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 style="font-weight:800;margin-bottom:1rem;font-size:1.1rem">Contact</h4>
+          <p style="opacity:.9;line-height:1.9;margin:0">
+            📍 Strada Libertății 55<br/>
+            Ilia 337270, România<br/><br/>
+            📞 <a href="tel:+40700000000" style="color:#fff;font-weight:700">+40 700 000 000</a><br/><br/>
+            🕐 Luni-Vineri: 08:00-18:00<br/>
+            Sâmbătă: 09:00-14:00
+          </p>
+        </div>
+      </div>
+      
+      <div style="border-top:1px solid rgba(255,255,255,0.2);padding-top:1.5rem;text-align:center">
+        <small style="opacity:.9">© <span id="year"></span> Mezeluri la Grasu — Toate drepturile rezervate | Realizat cu ❤️ pentru tradiție și calitate</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    (function(){
+      const els = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(el => io.observe(el));
+    })();
+
+    // Navbar scroll effect
+    (function(){
+      const nav = document.getElementById('siteNav');
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+      document.addEventListener('scroll', onScroll, { passive:true });
+      onScroll();
+    })();
+
+    // Swiper initialization
+    const swiper = new Swiper('.mySwiper', {
+      slidesPerView: 1.1,
+      spaceBetween: 20,
+      centeredSlides: false,
+      loop: true,
+      breakpoints: {
+        640: { slidesPerView: 1.3, spaceBetween: 24 },
+        768: { slidesPerView: 2, spaceBetween: 28 },
+        1024: { slidesPerView: 3, spaceBetween: 32 }
+      },
+      pagination: { 
+        el: '.swiper-pagination', 
+        clickable: true,
+        dynamicBullets: true
+      },
+      navigation: { 
+        nextEl: '.swiper-button-next', 
+        prevEl: '.swiper-button-prev' 
+      },
+      autoplay: { 
+        delay: 4500, 
+        disableOnInteraction: false, 
+        pauseOnMouseEnter: true 
+      },
+      speed: 600,
+      effect: 'slide',
+      a11y: {
+        enabled: true,
+        prevSlideMessage: 'Produsul anterior',
+        nextSlideMessage: 'Următorul produs'
+      }
+    });
+
+    // Form submission
+    function showFormStatus(){
+      const status = document.getElementById('formStatus');
+      const name = document.getElementById('cf-name').value.trim();
+      const contact = document.getElementById('cf-contact').value.trim();
+      const message = document.getElementById('cf-message').value.trim();
+
+      if (!name || !contact || !message) {
+        status.textContent = '⚠️ Te rugăm să completezi toate câmpurile obligatorii.';
+        status.style.color = '#dc3545';
+        return;
+      }
+
+      status.textContent = '✅ Mulțumim! Mesajul tău a fost trimis cu succes. Te vom contacta în cel mai scurt timp.';
+      status.style.color = 'var(--accent)';
+
+      setTimeout(() => {
+        document.getElementById('contactForm').reset();
+        status.textContent = '';
+      }, 6000);
+    }
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const navHeight = document.getElementById('siteNav').offsetHeight;
+          const targetPosition = target.offsetTop - navHeight - 20;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#navCollapse .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const navCollapse = document.getElementById('navCollapse');
+        const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+        if (bsCollapse && window.innerWidth < 992) {
+          bsCollapse.hide();
+        }
+      });
+    });
+
+    // Add loading animation
+    window.addEventListener('load', () => {
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+      }, 100);
+    });
+  </script>
+</body>
+</html>
